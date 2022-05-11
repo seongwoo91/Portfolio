@@ -1,0 +1,175 @@
+#port__wrap {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a3 a4"
+    "b1 b2 b3 b3"
+    "c1 c2 c3 c4"
+    "d1 c2 d3 d4";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+}
+.a1,
+.a2,
+.a3,
+.a4,
+.b1,
+.b2,
+.b3,
+.b4,
+.c1,
+.c2,
+.c3,
+.c4,
+.d1,
+.d2,
+.d3,
+.d4 {
+  border: 1px solid rgb(233, 232, 232);
+}
+
+.a1 {
+  grid-area: a1;
+  background: #000;
+}
+.a2 {
+  grid-area: a2;
+}
+.a3 {
+  grid-area: a3;
+  padding: 15px 25px;
+  position: relative;
+}
+.a3 h2,
+.b2 h2 {
+  display: inline;
+  font-family: "GmarketSans";
+  font-weight: 300;
+  font-size: 38px;
+}
+.a3 span,
+.b2 span {
+  font-family: "GmarketSans";
+  font-weight: 300;
+  font-size: 17px;
+  color: #999;
+}
+.a3 p,
+.b2 p {
+  font-family: "ChosunNm";
+  font-size: 20px;
+  line-height: 1.5;
+}
+.a3 ol {
+  margin-top: 30px;
+}
+.b2 ol {
+  margin-top: 40px;
+}
+.a3 ol li,
+.b2 ol li {
+  display: inline-block;
+  font-family: "GmarketSans";
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #000;
+  padding: 10px 14px;
+  border-radius: 50%;
+}
+.al ol li:nth-child(2) {
+  background: red;
+  color: red;
+}
+.a3 .a3__desc,
+.b2 .b2__desc {
+  transition: all 0.5s;
+}
+.movebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: black;
+  transition: all 0.5s;
+}
+.a3:hover .movebar,
+.b2:hover .movebar {
+  width: 25px;
+}
+.a3:hover .a3__desc,
+.b2:hover .b2__desc {
+  transform: translate(25px);
+}
+.a4 {
+  grid-area: a4;
+}
+.b1 {
+  grid-area: b1;
+}
+.b2 {
+  grid-area: b2;
+  padding: 15px 25px;
+  position: relative;
+}
+.b3 {
+  grid-area: b3;
+}
+.b3 span {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 130px;
+  line-height: 2.3;
+}
+.b4 {
+  grid-area: b4;
+}
+.c1 {
+  grid-area: c1;
+}
+.c2 {
+  grid-area: c2;
+  position: relative;
+}
+.c2 span {
+  writing-mode: vertical-lr;
+  font-family: "GmarketSans";
+  font-weight: 300;
+  font-size: 70px;
+  padding-top: 20px;
+}
+.c2 h2 {
+  transform: rotate(90deg);
+  display: inline-block;
+  position: absolute;
+  top: 55px;
+  left: 60px;
+  font-size: 20px;
+  font-family: "ChosunNm";
+}
+
+.c3 {
+  grid-area: c3;
+  background-image: url(face2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c4 {
+  grid-area: c4;
+}
+.d1 {
+  grid-area: d1;
+}
+.d2 {
+  grid-area: d2;
+}
+.d3 {
+  grid-area: d3;
+}
+.d4 {
+  grid-area: d4;
+}
