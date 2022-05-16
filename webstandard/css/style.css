@@ -1,0 +1,138 @@
+* {
+    font-family: "GmarketSans";
+  }
+  
+  #webstan_wrap {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+      "a1 a1 a1 a4"
+      "b1 b1 b3 b4"
+      "b1 b1 c3 c4"
+      "b1 b1 d3 c4";
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    overflow: hidden;
+  }
+  .a1,
+  .a4,
+  .b1,
+  .b3,
+  .b4,
+  .c3,
+  .c4,
+  .d3 {
+    border: 0.5px solid rgb(233, 232, 232);
+    overflow: hidden;
+  }
+
+
+  .a1 {
+      grid-area: a1;
+      position: relative;
+      padding: 20px;
+  }
+  .a1 ol {
+    position: absolute;
+    display: flex;
+  }
+  .a1 ol li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 34px;
+    border: 1px solid black;
+    margin-right: 4px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 2.2; 
+  }
+  .a1 ol li.active {
+    color: #fff;
+    background: #000;
+  }
+  .a1 h1 {
+    position: absolute;
+    font-weight: 700;
+    font-size: 130px;
+    bottom: 0;  
+    text-transform: uppercase;
+  }
+  .a4 {
+      grid-area: a4;
+      position: relative;
+  }
+  
+    .a4 a {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 20px;
+
+    }
+    
+    .a4 span {
+    font-weight: 300;
+    font-size: 40px;
+    float: right;
+    margin-bottom: 5px;
+    padding-left: 200px;
+    }
+    .a4 img {
+        float: right;
+    }
+  .b1 {
+      grid-area: b1;
+      background-image: url(../img/webstandard.jpg);
+      background-size: cover;     
+  }
+  .b3 {
+      grid-area: b3;
+      position: relative;
+      padding: 25px;
+  }
+  
+.b3 h2,
+.c3 h2,
+.d3 h2
+ {
+  font-weight: 300;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.b3 p,
+.c3 p,
+.d3 p
+ {
+  font-family: "ChosunNm";
+  font-size: 20px;
+}
+  .b4 {
+      grid-area: b4;
+  }
+  .c3 {
+      grid-area: c3;
+      position: relative;
+      padding: 25px;
+  }
+  .c4 {
+      grid-area: c4;
+      background: #000;      
+      padding: 40px;
+  }
+  .c4 p {
+    font-family: "ChosunNm";
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+  .d3 {
+      grid-area: d3;
+      position: relative;
+      padding: 25px;
+  } 

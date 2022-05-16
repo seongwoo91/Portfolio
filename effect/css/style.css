@@ -1,0 +1,152 @@
+* {
+    font-family: "GmarketSans";
+  }
+  
+  #music__wrap {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+      "a1 a2 a2 a2"
+      "b1 b2 b3 b4"
+      "b1 c2 c3 c4"
+      "d1 d2 d3 d4";
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    overflow: hidden;
+  }
+
+  .a1,.a2,.b1,.b2,.d1,.d2,.d3,.d4,.b3,.b4,.c2,.c3,.c4 {
+    border: 0.5px solid rgb(233, 232, 232);
+    overflow: hidden;
+  }
+  .a1 {
+      grid-area: a1;
+      position: relative;
+  }  
+  .a1 a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+  }
+  .a1 span {
+  font-weight: 300;
+  font-size: 40px;
+  margin-bottom: 5px;
+  padding-right: 200px;
+  }
+  .a1 img {
+  
+  }
+  .a2 {
+      grid-area: a2;
+      position: relative;
+      padding: 20px;
+  }
+  .a2 ol {
+    position: absolute;
+    display: flex;
+  }
+  .a2 ol li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 34px;
+    border: 1px solid black;
+    margin-right: 4px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 2.2; 
+  }
+  .a2 ol li.active {
+    color: #fff;
+    background: #000;
+  }
+  .a2 h1 {
+    position: absolute;
+    font-weight: 700;
+    font-size: 130px;
+    bottom: 0;  
+    text-transform: uppercase;
+  }
+  .b1 {
+      grid-area: b1;
+      padding: 40px;
+      background: #000;
+  }
+  .b1 p {
+    font-family: "ChosunNm";
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+  .b2 {
+      grid-area: b2; 
+      background-image: url(../img/ef1.jpg);  
+      background-size: cover;   
+  }
+  .b3 {
+      grid-area: b3;
+      background-image: url(../img/ef2.jpg);
+      background-size: cover;
+  }
+  .b4 {
+      grid-area: b4;
+      background-image: url(../img/ef3.jpg);
+      background-size: cover;
+  }
+  .c2 {
+      grid-area: c2;
+      background-image: url(../img/ef4.jpg);
+      background-size: cover;
+  }
+  .c3 {
+      grid-area: c3;
+      background-image: url(../img/ef5.jpg);
+      background-size: cover;
+  }
+  .c4 {
+      grid-area: c4;
+      background-image: url(../img/ef6.jpg);
+      background-size: cover;
+  }
+  .d1 {
+      grid-area: d1;
+  }
+  .d2 {
+      grid-area: d2;
+      position: relative;
+      padding: 25px;
+  }
+  .d2 h2,
+  .d3 h2,
+  .d4 h2
+   {
+    font-weight: 300;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .d2 p,
+  .d3 p,
+  .d4 p
+   {
+    font-family: "ChosunNm";
+    font-size: 20px;
+  }
+  .d3 {
+      grid-area: d3;
+      position: relative;
+      padding: 25px;
+  }
+  .d4 {
+      grid-area: d4;
+      position: relative;
+      padding: 25px;
+  }
+  

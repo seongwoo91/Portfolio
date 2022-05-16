@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GmarketSans";
+}
+
+#port__wrap {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a3 a4"
+    "b1 b2 b3 b3"
+    "c1 c2 c3 c4"
+    "d1 c2 d3 d4";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+}
+
+.a1,
+.a2,
+.a3,
+.a4,
+.b1,
+.b2,
+.b3,
+.c1,
+.c2,
+.c3,
+.c4,
+.d1,
+.d3,
+.d4 {
+  border: 0.5px solid rgb(233, 232, 232);
+  overflow: hidden;
+}
+
+.a1 {
+  grid-area: a1;
+  position: relative;
+  background: #000;
+}
+.a1 h2 {
+  position: absolute;
+  bottom: 0;
+  right: 1vw;
+  color: #fff;
+  font-size: 7vw;
+  font-weight: 700;
+}
+.a2 {
+  grid-area: a2;
+}
+.a3 {
+  grid-area: a3;
+  position: relative;
+}
+.a3 .a3box,
+.b2 .b2box,
+.c1 .c1box,
+.d3 .d3box {
+  width: 100%;
+  height: 100%;
+  padding: 1vw;
+  display: inline-block;
+  pointer-events: none;
+}
+.a3 h3,
+.b2 h3,
+.c1 h3,
+.d3 h3 {
+  display: inline;
+  font-size: 2vw;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.a3 span,
+.b2 span,
+.c1 span,
+.d3 span {
+  font-weight: 300;
+  color: #999;
+  float: right;
+  margin-top: 0.5vw;
+  font-size: 0.85vw;
+}
+.a3 p,
+.b2 p,
+.c1 p,
+.d3 p {
+  margin-top: 0.2vw;
+  font-family: "ChosunNm";
+  line-height: 1.6;
+  font-size: 0.9vw;
+}
+.a3 ol,
+.b2 ol,
+.c1 ol {
+  position: absolute;
+  bottom: 1vw;
+  left: 1vw;
+}
+.a3 ol li,
+.b2 ol li,
+.c1 ol li {
+  display: inline;
+  margin: 0 0.4vw 0 0;
+}
+.a3 ol li .a3a,
+.b2 ol li .b2a,
+.c1 ol li .c1a {
+  display: inline-block;
+  color: #000;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 0.9vw;
+  width: 2vw;
+  height: 2vw;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #000;
+  display: table-cell;
+  transition: all 0.4s ease;
+}
+.a3 ol li .a3a:hover,
+.b2 ol li .b2a:hover,
+.c1 ol li .c1a:hover {
+  color: #fff;
+  background: #000;
+}
+.a4 {
+  grid-area: a4;
+  padding: 1vw;
+}
+.a4 a {
+  font-weight: 300;
+  text-transform: uppercase;
+  float: right;
+  font-size: 1vw;
+}
+.b1 {
+  grid-area: b1;
+}
+.b2 {
+  grid-area: b2;
+  position: relative;
+}
+.b3 {
+  grid-area: b3;
+  position: relative;
+}
+.b3 h1,
+.d1 h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  font-size: 7vw;
+}
+.d1 h1::after {
+  position: absolute;
+  content: "";
+  background: url(../img/koreaflag.svg);
+  background-size: cover;
+  width: 2vw;
+  height: 2vw;
+  top: -1vw;
+}
+.c1 {
+  grid-area: c1;
+  position: relative;
+}
+.c2 {
+  grid-area: c2;
+  position: relative;
+  padding: 1vw;
+}
+.c2 span {
+  writing-mode: vertical-lr;
+  font-weight: 300;
+  font-size: 3vw;
+}
+.c2 h3 {
+  transform: rotate(90deg);
+  display: inline-block;
+  font-family: "ChosunNm";
+  position: absolute;
+  font-size: 1vw;
+  top: 2.6vw;
+  left: 3vw;
+}
+.c3 {
+  grid-area: c3;
+  background-image: url(../img/face2.jpg);
+  background-size: cover;
+}
+.c4 {
+  grid-area: c4;
+  padding: 1vw;
+}
+.c4 p {
+  font-family: "ChosunNm";
+  line-height: 1.6;
+  font-size: 1vw;
+}
+.d1 {
+  grid-area: d1;
+  position: relative;
+}
+.d3 {
+  grid-area: d3;
+  position: relative;
+}
+.d3 .d3a {
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+  font-weight: 300;
+  font-size: 1vw;
+}
+.d4 {
+  grid-area: d4;
+  position: relative;
+  padding: 1vw;
+}
+.d4 .imgbox {
+  position: absolute;
+  bottom: 0.5vw;
+  right: 0.5vw;
+}
+.d4 a {
+  padding: 0.3vw;
+}
+@media (max-width: 992px) {
+  .a3 ol,
+  .b2 ol,
+  .c1 ol {
+    display: none;
+  }
+  .a3 h3,
+  .b2 h3,
+  .c1 h3,
+  .d3 h3 {
+    font-size: 3.5vw;
+  }
+  .a3 span,
+  .b2 span,
+  .c1 span,
+  .d3 span {
+    display: none;
+  }
+  .a3 p,
+  .b2 p,
+  .c1 p,
+  .d3 p {
+    margin-top: 0.7vw;
+    font-size: 1.6vw;
+  }
+  .c4 p {
+    font-size: 1.5vw;
+  }
+  .a3 .a3box,
+  .b2 .b2box,
+  .c1 .c1box,
+  .d3 .d3box {
+    pointer-events: auto;
+  }
+  .d3 .d3a {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #port__wrap {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+      "c3 c4"
+      "a3 b2"
+      "c1 b3"
+      "d3 b3";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+    overflow: hidden;
+  }
+  .b3 h1 {
+    writing-mode: vertical-lr;
+    font-size: 9vw;
+  }
+  .a3 .a3box,
+  .b2 .b2box,
+  .c1 .c1box,
+  .d3 .d3box {
+    pointer-events: auto;
+  }
+  .a3 ol,
+  .b2 ol,
+  .c1 ol {
+    display: block;
+  }
+  .a3 ol li .a3a,
+  .b2 ol li .b2a,
+  .c1 ol li .c1a {
+    display: inline-block;
+    color: #000;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 2vw;
+    width: 6vw;
+    height: 6vw;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    display: table-cell;
+    transition: all 0.4s ease;
+  }
+  .c4 {
+    padding: 2vw;
+  }
+  .d3 .d3a {
+    font-size: 3.5vw;
+    display: block;
+  }
+  .c4 p {
+    font-size: 2.5vw;
+  }
+  .a3 h3,
+  .b2 h3,
+  .c1 h3,
+  .d3 h3 {
+    font-size: 6vw;
+  }
+  .a3 p,
+  .b2 p,
+  .c1 p,
+  .d3 p {
+    margin-top: 0.5vw;
+    font-size: 2.3vw;
+  }
+}
+@media (max-width: 500px) {
+  #port__wrap {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+      "c3"
+      "a3"
+      "b2"
+      "c1"
+      "d3";
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    overflow: hidden;
+  }
+  .a3 ol,
+  .b2 ol,
+  .c1 ol {
+    display: none;
+  }
+  .d3 .d3a {
+    display: none;
+  }
+  .a3 h3,
+  .b2 h3,
+  .c1 h3,
+  .d3 h3 {
+    font-size: 10vw;
+  }
+  .a3 p,
+  .b2 p,
+  .c1 p,
+  .d3 p {
+    margin-top: 1vw;
+    font-size: 4vw;
+  }
+  .a3:hover h3,
+  .b2:hover h3,
+  .c1:hover h3,
+  .d3:hover h3 {
+    color: #fff;
+  }
+  .a3:hover p,
+  .b2:hover p,
+  .c1:hover p,
+  .d3:hover p {
+    color: #fff;
+  }
+  .a3box,
+  .b2box,
+  .c1box,
+  .d3box {
+    transition: all 0.4s ease;
+  }
+  .a3:hover .a3box,
+  .b2:hover .b2box,
+  .c1:hover .c1box,
+  .d3:hover .d3box {
+    background: #000;
+  }
+}

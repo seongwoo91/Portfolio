@@ -1,0 +1,125 @@
+* {
+  font-family: "GmarketSans";
+}
+
+#about__wrap {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: grid;
+  grid-template-areas:
+    "a1 a1 a1 a4"
+    "a1 a1 a1 b4"
+    "a1 a1 a1 c4"
+    "d1 d2 d3 d3";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+}
+
+.a1,
+.a4,
+.b4,
+.c4,
+.d1,
+.d2,
+.d3 {
+  border: 0.5px solid rgb(233, 232, 232);
+  overflow: hidden;
+}
+
+.a1 {
+  grid-area: a1;
+  background-image: url(/about/img/face.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.a4 {
+  grid-area: a4;
+  position: relative;
+}
+.a4 a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+.a4 span {
+  float: right;
+  font-weight: 300;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 200px;
+}
+.a4 img {
+  float: right;
+}
+.b4 {
+  grid-area: b4;
+  padding: 25px;
+  position: relative;
+}
+.b4 .movebar,
+.c4 .movebar,
+.d2 .movebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0px;
+  height: 100%;
+  background: #000;
+}
+.b4 h2,
+.c4 h2,
+.d2 h2 {
+  font-weight: 300;
+  font-size: 40px;
+}
+.b4 p,
+.c4 p,
+.d2 p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+}
+.c4 {
+  grid-area: c4;
+  padding: 25px;
+  position: relative;
+}
+.d1 {
+  grid-area: d1;
+  position: relative;
+}
+.d1 ul {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.d1 ul li {
+  display: inline;
+  padding: 4px;
+}
+
+.d2 {
+  grid-area: d2;
+  padding: 25px;
+  position: relative;
+}
+.d3 {
+  grid-area: d3;
+  overflow: hidden;
+  position: relative;
+}
+.d3 span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 120px;
+  text-transform: uppercase;
+}
