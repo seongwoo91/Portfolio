@@ -1,0 +1,246 @@
+* {
+  font-family: "GmarketSans";
+}
+
+#section {
+  width: 100vw;
+  height: 100vh;
+  background: #d6d6d6;
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a3 a4"
+    "b1 b2 b3 b3"
+    "c1 c2 c3 c4"
+    "d1 c2 d3 d4";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+  gap: 1px;
+}
+
+#section > div {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+#section > div:nth-child(1) {
+  grid-area: a1;
+}
+#section > div:nth-child(2) {
+  grid-area: a2;
+}
+#section > div:nth-child(3) {
+  grid-area: a3;
+}
+#section > div:nth-child(4) {
+  grid-area: a4;
+}
+#section > div:nth-child(5) {
+  grid-area: b1;
+}
+#section > div:nth-child(6) {
+  grid-area: b2;
+}
+#section > div:nth-child(7) {
+  grid-area: b3;
+}
+#section > div:nth-child(8) {
+  grid-area: b4;
+}
+#section > div:nth-child(9) {
+  grid-area: c1;
+}
+#section > div:nth-child(10) {
+  grid-area: c2;
+}
+#section > div:nth-child(11) {
+  grid-area: c3;
+}
+#section > div:nth-child(12) {
+  grid-area: c4;
+}
+#section > div:nth-child(13) {
+  grid-area: d1;
+}
+#section > div:nth-child(14) {
+  grid-area: d2;
+}
+#section > div:nth-child(15) {
+  grid-area: d3;
+}
+#section > div:nth-child(16) {
+  grid-area: d4;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 10px;
+}
+.p30 {
+  padding: 10px;
+}
+#section h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#section h4 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: none;
+}
+#section .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#section .h1_br {
+  justify-content: end;
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.media_img {
+  display: none;
+}
+#section h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+#section span {
+  color: #999;
+  font-weight: 300;
+}
+#section p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.more {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: 300;
+  font-size: 20px;
+}
+.more:hover {
+  color: #999;
+}
+.num_box {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.num_box a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #000;
+  margin-right: 2px;
+  transition: all 0.4s;
+}
+.num_box a:hover {
+  background: #000;
+  color: #fff;
+}
+#section h3 {
+  writing-mode: vertical-rl;
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.link_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.link_box a {
+  margin-right: 10px;
+}
+/* message */
+#message .message_cont {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#message h1 {
+  font-weight: 700;
+  font-size: 5vw;
+}
+@media (max-width: 1280px) {
+  #section {
+    grid-template-areas:
+      "a1 a1 a3 a3"
+      "b2 b2 c3 c3"
+      "c1 c1 c3 c3"
+      "d2 d2 d3 d3";
+  }
+  #section > div:nth-child(1) h1 {
+    display: none;
+  }
+  #section h4 {
+    display: block;
+  }
+  .h1_tr {
+    justify-content: end;
+    align-items: start;
+  }
+}
+@media (max-width: 768px) {
+  #section {
+    grid-template-areas:
+      "a3 a3 a3 a2"
+      "b2 b2 b2 a4"
+      "c1 c1 c1 b1"
+      "d3 d3 d3 d4";
+    grid-template-columns: 25% 20% 20% 35%;
+  }
+  .media_img {
+    display: block;
+  }
+  .link_box {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #section {
+    grid-template-areas:
+      "a3 a3 a2 a2"
+      "b2 b2 a4 a4"
+      "c1 c1 b1 b1"
+      "d3 d3 d4 d4";
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #section span {
+    display: none;
+  }
+  .num_box {
+    display: none;
+  }
+  #section h2 {
+    font-size: 30px;
+  }
+  #section p {
+    font-size: 15px;
+  }
+}
+@media (max-height: 500px) {
+  #section {
+    display: none;
+  }
+  #message {
+    display: block;
+  }
+}
