@@ -4,8 +4,7 @@
 
 #section {
   width: 100vw;
-  height: 100vh;
-  background: #d6d6d6;
+  height: 100vh;  
   display: grid;
   grid-template-areas:
     "a1 a2 a3 a4"
@@ -16,12 +15,52 @@
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
   gap: 1px;
+  transition: all 1.5s 0.5s;
+}
+#section.load {
+  background: #D6D6D6;
+}
+#section.load.pagemove {
+  background: #000;
+}
+#section.close {
+  animation: close 1.5s 2.2s forwards;
+}
+@keyframes close {
+  0% {background: #D6D6D6}
+  100% {background: #000}
 }
 
 #section > div {
   background: #fff;
   overflow: hidden;
   position: relative;
+}
+#section > div::before {
+  content:"";
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;  
+  animation: open 1.5s 1.5s forwards;
+}
+#section > div.active::after {
+  content:"";
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;  
+  animation: bye 1.5s forwards;
+}
+@keyframes bye {
+  0% {width: 0%;}
+  100% {width: 100%;}
+}
+@keyframes open {
+  0% {width: 100%;}
+  100% {width: 0%;}
 }
 #section > div:nth-child(1) {
   grid-area: a1;
@@ -168,6 +207,9 @@
   margin-right: 10px;
 }
 /* message */
+#message {
+  display: none;
+}
 #message .message_cont {
   width: 100%;
   height: 100vh;
