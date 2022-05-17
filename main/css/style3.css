@@ -15,7 +15,7 @@
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
   gap: 1px;
-  transition: all 1.5s 0.5s;
+  transition: background 1.5s 0.5s;
 }
 #section.load {
   background: #D6D6D6;
