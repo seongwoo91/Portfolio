@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="cont__wrap">
-      <section id="section">
+      <section id="section" class="load pagemove">
         <div class="h1 lh_1 h1_br">
           <!-- 1 -->
           <h1>dev</h1>
@@ -36,10 +36,10 @@
             공부하였으며, 알고리즘을 통하여 깊이를 더하다.
           </p>
           <div class="num_box">
-            <a href="" class="link">1</a>
-            <a href="" class="link">2</a>
-            <a href="" class="link">3</a>
-            <a href="" class="link">4</a>
+            <a href="#3" class="link">1</a>
+            <a href="#3" class="link">2</a>
+            <a href="#3" class="link">3</a>
+            <a href="#3" class="link">4</a>
           </div>
         </div>
         <div>
@@ -71,10 +71,10 @@
             마스터하다.
           </p>
           <div class="num_box">
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
+            <a href="#3" class="link">1</a>
+            <a href="#3" class="link">2</a>
+            <a href="#3" class="link">3</a>
+            <a href="#3" class="link">4</a>
           </div>
         </div>
         <div class="h1 lh_1">
@@ -93,10 +93,8 @@
             자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
           </p>
           <div class="num_box">
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
+            <a href="../react/index.html" class="link">1</a>
+            <a href="../vue/index.html" class="link">2</a>
           </div>
         </div>
         <div>
@@ -128,7 +126,7 @@
           <h2>ANIMAITION</h2>
           <span>2022.04.05</span>
           <p>맛좋은 애니메이션이 왔어요</p>
-          <a href="" class="more">MORE</a>
+          <a href="#3" class="more">MORE</a>
         </div>
         <div>
           <!-- 16 -->
@@ -156,15 +154,35 @@
 
     <script>
       const link = document.querySelector("#section .link");
-      const Box = document.querySelectorAll("#section > div");
+      const Box = document.querySelectorAll("#section div");
 
-      link.addEventListener("click", () => {
-        document.getElementById("section").classList.add("active");
-
-        setTimeout(()=>{
-          
-        }, 2000)
-      });
+      window.onload = function () {
+        function pageon() {
+          setTimeout(() => {
+            document.getElementById("section").classList.remove("pagemove");
+            //callback();
+          }, 100);
+        }
+        pageon();
+        function Pagechange() {
+          document.querySelectorAll(".link").forEach((el) => {
+            el.addEventListener("click", (e) => {
+              e.preventDefault();
+              const Href = el.getAttribute("href");
+              document.getElementById("section").classList.add("close");
+              Box.forEach((e, i) => {
+                setTimeout(() => {
+                  e.classList.add("active");
+                }, 50 * i);
+              });
+              setTimeout(() => {
+                window.location.href = Href;
+              }, 3300);
+            });
+          });
+        }
+        Pagechange();
+      };
     </script>
   </body>
 </html>

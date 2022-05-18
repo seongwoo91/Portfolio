@@ -2,10 +2,10 @@
   font-family: "GmarketSans";
 }
 
-#react__wrap {
+#react {
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: #d6d6d6;
   display: grid;
   grid-template-areas:
     "a1 a1 a3 a4"
@@ -15,128 +15,208 @@
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
+  gap: 1px;
+  transition: background 1.5s 0.5s;
 }
-
-.a1,
-.a3,
-.a4,
-.b1,
-.b2,
-.b3,
-.c1,
-.d3,
-.d4 {
-  border: 0.5px solid rgb(233, 232, 232);
-  overflow: hidden;
+#react.load {
+  background: #d6d6d6;
 }
-.a1 {
-  grid-area: a1;
-  position: relative;
-  padding: 20px;
-}
-.a1 ol {
-  position: absolute;
-  display: flex;
-}
-.a1 ol li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2em;
-  height: 2em;
-  border-radius: 34px;
-  border: 1px solid black;
-  margin-right: 4px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 2.2; 
-}
-.a1 ol li.active {
-  color: #fff;
+#react.load.pagemove {
   background: #000;
 }
-.a1 h1 {
-  position: absolute;
-  font-weight: 700;
-  font-size: 130px;
-  bottom: 0;  
+#react.close {
+  animation: close 1.5s 2.2s forwards;
 }
-.a3 {
-  grid-area: a3;
+@keyframes close {
+  0% {
+    background: #d6d6d6;
+  }
+  100% {
+    background: #000;
+  }
+}
+#react > div {
+  background: #fff;
+  overflow: hidden;
   position: relative;
 }
-.a3 a,
-.a4 a {
+#react > div::before {
+  content: "";
   position: absolute;
-  right: 0;
   top: 0;
-  padding: 20px;
-  
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: open 1.5s 1.5s forwards;
 }
-.a3 span,
-.a4 span {
-font-weight: 300;
-font-size: 40px;
-float: right;
-margin-bottom: 5px;
-padding-left: 200px;
+#react > div.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bye 1.5s forwards;
 }
-.a3 img,
-.a4 img {
-float: right;
+@keyframes bye {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
-.a4 {
+@keyframes open {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+#react > div:nth-child(1) {
+  grid-area: a1;
+}
+#react > div:nth-child(2) {
+  grid-area: a2;
+}
+#react > div:nth-child(3) {
+  grid-area: a3;
+}
+#react > div:nth-child(4) {
   grid-area: a4;
-  position: relative;
 }
-.b1 {
+#react > div:nth-child(5) {
   grid-area: b1;
-  position: relative;
-  padding: 25px;
-  
 }
-.b1 h2,
-.d3 h2,
-.d4 h2
- {
-  font-weight: 300;
-  font-size: 40px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-.b1 p,
-.d3 p,
-.d4 p
- {
-  font-family: "ChosunNm";
-  font-size: 20px;
-}
-.b2 {
+#react > div:nth-child(6) {
   grid-area: b2;
 }
-.b3 {
+#react > div:nth-child(7) {
   grid-area: b3;
   background-image: url(../img/reactsite.jpg);
-  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
-.c1 {
+#react > div:nth-child(8) {
+  grid-area: b4;
+}
+#react > div:nth-child(9) {
   grid-area: c1;
-  background: #000;
+}
+#react > div:nth-child(10) {
+  grid-area: c2;
+}
+#react > div:nth-child(11) {
+  grid-area: c3;
+}
+#react > div:nth-child(12) {
+  grid-area: c4;
+}
+#react > div:nth-child(13) {
+  grid-area: d1;
+}
+#react > div:nth-child(14) {
+  grid-area: d2;
+}
+#react > div:nth-child(15) {
+  grid-area: d3;
+}
+#react > div:nth-child(16) {
+  grid-area: d4;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
   padding: 20px;
 }
-.c1 p {
+.p30 {
+  padding: 30px;
+}
+.pagenum {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0;
+  animation: start 0.3s 2.7s forwards;
+}
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.pagenum a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 700;
+  text-align: center;
+  line-height: 36px;
+  border: 3px solid #000;
+}
+.pagenum a:hover {
+  background: #000;
   color: #fff;
+}
+#react h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.now {
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.lh_75 {
+  line-height: 0.75;
+}
+.lh_160 {
+  line-height: 1.6;
+}
+#react .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#react .black {
+  background: #000;
+  color: #fff;
+}
+.font_cho {
   font-family: "ChosunNm";
-  font-size: 25px;
-  line-height: 1.5;
 }
-.d3 {
-  grid-area: d3;
-  position: relative;
-  padding: 25px;
+.fz20 {
+  font-size: 20px;
 }
-.d4 {
-  grid-area: d4;
-  position: relative;
-  padding: 25px;
+#react h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+.p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.movelink {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.movelink h2 {
+  float: right;
+  margin-left: 100px;
+}
+.movelink img {
+  float: right;
 }

@@ -1,14 +1,10 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: "GmarketSans";
 }
 
-#port__wrap {
+#section {
   width: 100vw;
   height: 100vh;
-  background: #fff;
   display: grid;
   grid-template-areas:
     "a1 a2 a3 a4"
@@ -18,224 +14,289 @@
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
+  gap: 1px;
+  transition: background 1.5s 0.5s;
 }
-
-.a1,
-.a2,
-.a3,
-.a4,
-.b1,
-.b2,
-.b3,
-.c1,
-.c2,
-.c3,
-.c4,
-.d1,
-.d3,
-.d4 {
-  border: 0.5px solid rgb(233, 232, 232);
-  overflow: hidden;
+#section.load {
+  background: #d6d6d6;
 }
-
-.a1 {
-  grid-area: a1;
-  position: relative;
+#section.load.pagemove {
   background: #000;
 }
-.a1 h2 {
-  position: absolute;
-  bottom: 0;
-  right: 1vw;
-  color: #fff;
-  font-size: 7vw;
-  font-weight: 700;
+#section.close {
+  animation: close 1.5s 2.2s forwards;
 }
-.a2 {
-  grid-area: a2;
+@keyframes close {
+  0% {
+    background: #d6d6d6;
+  }
+  100% {
+    background: #000;
+  }
 }
-.a3 {
-  grid-area: a3;
+
+#section > div {
+  background: #fff;
+  overflow: hidden;
   position: relative;
-  transition: all 3s ease;
 }
-.a3 .a3box,
-.b2 .b2box,
-.c1 .c1box,
-.d3 .d3box {
+#section > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 1vw;
-  display: inline-block;
-  pointer-events: none;
-  transition: all 3s ease;
-}
-.a3 h3,
-.b2 h3,
-.c1 h3,
-.d3 h3 {
-  display: inline;
-  font-size: 2vw;
-  font-weight: 300;
-  text-transform: uppercase;
-  transition: all 3s ease;
-}
-.a3 span,
-.b2 span,
-.c1 span,
-.d3 span {
-  font-weight: 300;
-  color: #999;
-  float: right;
-  margin-top: 0.5vw;
-  font-size: 0.85vw;
-  transition: all 3s ease;
-}
-.a3 p,
-.b2 p,
-.c1 p,
-.d3 p {
-  margin-top: 0.2vw;
-  font-family: "ChosunNm";
-  line-height: 1.6;
-  font-size: 0.9vw;
-  transition: all 2s;
-}
-.a3 ol,
-.b2 ol,
-.c1 ol {
-  position: absolute;
-  bottom: 1vw;
-  left: 1vw;
-}
-.a3 ol li,
-.b2 ol li,
-.c1 ol li {
-  display: inline;
-  margin: 0 0.4vw 0 0;
-}
-.a3 ol li .a3a,
-.b2 ol li .b2a,
-.c1 ol li .c1a {
-  display: inline-block;
-  color: #000;
-  background: #fff;
-  border-radius: 50%;
-  font-size: 0.9vw;
-  width: 2vw;
-  height: 2vw;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #000;
-  display: table-cell;
-  transition: all 0.4s ease;
-}
-.a3 ol li .a3a:hover,
-.b2 ol li .b2a:hover,
-.c1 ol li .c1a:hover {
-  color: #fff;
   background: #000;
+  animation: open 1.5s 1.5s forwards;
 }
-.a4 {
+#section > div.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bye 1.5s forwards;
+}
+@keyframes bye {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes open {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+#section > div:nth-child(1) {
+  grid-area: a1;
+}
+#section > div:nth-child(2) {
+  grid-area: a2;
+}
+#section > div:nth-child(3) {
+  grid-area: a3;
+}
+#section > div:nth-child(4) {
   grid-area: a4;
-  padding: 1vw;
 }
-.a4 a {
-  font-weight: 300;
-  text-transform: uppercase;
-  float: right;
-  font-size: 1vw;
-}
-.b1 {
+#section > div:nth-child(5) {
   grid-area: b1;
 }
-.b2 {
+#section > div:nth-child(6) {
   grid-area: b2;
-  position: relative;
 }
-.b3 {
+#section > div:nth-child(7) {
   grid-area: b3;
-  position: relative;
 }
-.b3 h1,
-.d1 h1 {
-  font-weight: 700;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 0;
-  font-size: 7vw;
+#section > div:nth-child(8) {
+  grid-area: b4;
 }
-.d1 h1::after {
-  position: absolute;
-  content: "";
-  background: url(../img/koreaflag.svg);
-  background-size: cover;
-  width: 2vw;
-  height: 2vw;
-  top: -1vw;
-}
-.c1 {
+#section > div:nth-child(9) {
   grid-area: c1;
-  position: relative;
 }
-.c2 {
+#section > div:nth-child(10) {
   grid-area: c2;
-  position: relative;
-  padding: 1vw;
 }
-.c2 span {
-  writing-mode: vertical-lr;
-  font-weight: 300;
-  font-size: 3vw;
-}
-.c2 h3 {
-  transform: rotate(90deg);
-  display: inline-block;
-  font-family: "ChosunNm";
-  position: absolute;
-  font-size: 1vw;
-  top: 2.6vw;
-  left: 3vw;
-}
-.c3 {
+#section > div:nth-child(11) {
   grid-area: c3;
-  background-image: url(../img/face2.jpg);
-  background-size: cover;
 }
-.c4 {
+#section > div:nth-child(12) {
   grid-area: c4;
-  padding: 1vw;
 }
-.c4 p {
-  font-family: "ChosunNm";
-  line-height: 1.6;
-  font-size: 1vw;
-}
-.d1 {
+#section > div:nth-child(13) {
   grid-area: d1;
-  position: relative;
 }
-.d3 {
+#section > div:nth-child(14) {
+  grid-area: d2;
+}
+#section > div:nth-child(15) {
   grid-area: d3;
-  position: relative;
 }
-.d3 .d3a {
-  position: absolute;
-  bottom: 1vw;
-  right: 1vw;
-  font-weight: 300;
-  font-size: 1vw;
-}
-.d4 {
+#section > div:nth-child(16) {
   grid-area: d4;
-  position: relative;
-  padding: 1vw;
 }
-.d4 .imgbox {
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 10px;
+}
+.p30 {
+  padding: 10px;
+}
+#section h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#section h4 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: none;
+}
+#section .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#section .h1_br {
+  justify-content: end;
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.media_img {
+  display: none;
+}
+#section h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+#section span {
+  color: #999;
+  font-weight: 300;
+}
+#section p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.more {
   position: absolute;
-  bottom: 0.5vw;
-  right: 0.5vw;
+  bottom: 10px;
+  left: 10px;
+  font-weight: 300;
+  font-size: 20px;
 }
-.d4 a {
-  padding: 0.3vw;
+.more:hover {
+  color: #999;
+}
+.num_box {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.num_box a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #000;
+  margin-right: 2px;
+  transition: all 0.4s;
+}
+.num_box a:hover {
+  background: #000;
+  color: #fff;
+}
+#section h3 {
+  writing-mode: vertical-rl;
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.link_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.link_box a {
+  margin-right: 10px;
+}
+/* message */
+#message {
+  display: none;
+}
+#message .message_cont {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#message h1 {
+  font-weight: 700;
+  font-size: 5vw;
+}
+@media (max-width: 1280px) {
+  #section {
+    grid-template-areas:
+      "a1 a1 a3 a3"
+      "b2 b2 c3 c3"
+      "c1 c1 c3 c3"
+      "d2 d2 d3 d3";
+  }
+  #section > div:nth-child(1) h1 {
+    display: none;
+  }
+  #section h4 {
+    display: block;
+  }
+  .h1_tr {
+    justify-content: end;
+    align-items: start;
+  }
+}
+@media (max-width: 768px) {
+  #section {
+    grid-template-areas:
+      "a3 a3 a3 a2"
+      "b2 b2 b2 a4"
+      "c1 c1 c1 b1"
+      "d3 d3 d3 d4";
+    grid-template-columns: 25% 20% 20% 35%;
+  }
+  .media_img {
+    display: block;
+  }
+  .link_box {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #section {
+    grid-template-areas:
+      "a3 a3 a2 a2"
+      "b2 b2 a4 a4"
+      "c1 c1 b1 b1"
+      "d3 d3 d4 d4";
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #section span {
+    display: none;
+  }
+  .num_box {
+    display: none;
+  }
+  #section h2 {
+    font-size: 30px;
+  }
+  #section p {
+    font-size: 15px;
+  }
+}
+@media (max-height: 500px) {
+  #section {
+    display: none;
+  }
+  #message {
+    display: block;
+  }
 }
