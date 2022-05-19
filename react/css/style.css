@@ -105,6 +105,13 @@
 }
 #react > div:nth-child(9) {
   grid-area: c1;
+  transition: all 0.3s ease;
+}
+#react > div:nth-child(9).scroll {
+  overflow-y: auto;
+}
+#react > div:nth-child(9).scroll::-webkit-scrollbar {
+  width: 1px;
 }
 #react > div:nth-child(10) {
   grid-area: c2;
@@ -219,4 +226,11 @@
 }
 .movelink img {
   float: right;
+}
+.code {
+  opacity: 0;
+  transition: opacity 0.5 ease;
+}
+.code.start {
+  opacity: 1;
 }
