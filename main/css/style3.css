@@ -15,7 +15,11 @@
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
   gap: 1px;
-  transition: background 1.5s 0.5s;
+  transition: background 0.7s 0.5s;
+  pointer-events: none;
+}
+#section.btnon {
+  pointer-events: auto;
 }
 #section.load {
   background: #d6d6d6;
@@ -24,7 +28,7 @@
   background: #000;
 }
 #section.close {
-  animation: close 1.5s 2.2s forwards;
+  animation: close 0.7s 1.5s forwards;
 }
 @keyframes close {
   0% {
@@ -48,7 +52,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: open 1.5s 1.5s forwards;
+  animation: open 0.7s 1s forwards;
 }
 #section > div.active::after {
   content: "";
@@ -58,7 +62,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: bye 1.5s forwards;
+  animation: bye 0.7s forwards;
 }
 @keyframes bye {
   0% {
@@ -84,6 +88,7 @@
 }
 #section > div:nth-child(3) {
   grid-area: a3;
+  transition: all 0.6s ease;
 }
 #section > div:nth-child(4) {
   grid-area: a4;
@@ -93,6 +98,7 @@
 }
 #section > div:nth-child(6) {
   grid-area: b2;
+  transition: all 0.6s ease;
 }
 #section > div:nth-child(7) {
   grid-area: b3;
@@ -102,6 +108,7 @@
 }
 #section > div:nth-child(9) {
   grid-area: c1;
+  transition: all 0.6s ease;
 }
 #section > div:nth-child(10) {
   grid-area: c2;
@@ -120,6 +127,7 @@
 }
 #section > div:nth-child(15) {
   grid-area: d3;
+  transition: all 0.6s ease;
 }
 #section > div:nth-child(16) {
   grid-area: d4;
@@ -177,19 +185,22 @@
 .more {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 20px;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 22px;
+  opacity: 0;
+  transition: all 0.6s;
 }
 .more:hover {
   color: #999;
+  opacity: 1;
 }
 .num_box {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 20px;
 }
-.num_box a {
+/* .num_box a {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -203,7 +214,44 @@
 .num_box a:hover {
   background: #000;
   color: #fff;
+} */
+
+.num_box a {
+  opacity: 0;
+  margin-right: 5px;
 }
+.num_box a:nth-child(1) {
+  transition: opacity 0.6s ease;
+}
+.num_box a:nth-child(2) {
+  transition: opacity 0.6s 0.15s ease;
+}
+.num_box a:nth-child(3) {
+  transition: opacity 0.6s 0.3s ease;
+}
+#section > div:nth-child(3):hover .num_box a,
+#section > div:nth-child(6):hover .num_box a,
+#section > div:nth-child(9):hover .num_box a,
+#section > div:nth-child(15):hover a {
+  opacity: 1;
+}
+#section > div:nth-child(3):hover,
+#section > div:nth-child(6):hover,
+#section > div:nth-child(9):hover,
+#section > div:nth-child(15):hover {
+  padding-left: 20px;
+}
+.num_box a:nth-child(1):hover .b1,
+.num_box a:nth-child(2):hover .b2,
+.num_box a:nth-child(3):hover .b3 {
+  display: inline-block;
+}
+.num_box a:nth-child(1):hover .w1,
+.num_box a:nth-child(2):hover .w2,
+.num_box a:nth-child(3):hover .w3 {
+  display: none;
+}
+
 #section h3 {
   writing-mode: vertical-rl;
   font-size: 4vw;
@@ -219,6 +267,11 @@
 }
 .link_box a {
   margin-right: 10px;
+}
+.b1,
+.b2,
+.b3 {
+  display: none;
 }
 /* message */
 #message {

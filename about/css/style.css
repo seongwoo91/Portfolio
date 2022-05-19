@@ -16,7 +16,11 @@
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
   gap: 1px;
-  transition: background 1.5s 0.5s;
+  transition: background 0.7s 0.5s;
+  pointer-events: none;
+}
+#about.btnon {
+  pointer-events: auto;
 }
 #about.load {
   background: #d6d6d6;
@@ -25,7 +29,7 @@
   background: #000;
 }
 #about.close {
-  animation: close 1.5s 2.2s forwards;
+  animation: close 0.7s 1.5s forwards;
 }
 @keyframes close {
   0% {
@@ -48,7 +52,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: open 1.5s 1.5s forwards;
+  animation: open 0.7s 1s forwards;
 }
 #about > div.active::after {
   content: "";
@@ -58,7 +62,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: bye 1.5s forwards;
+  animation: bye 0.7s forwards;
 }
 @keyframes bye {
   0% {
@@ -141,7 +145,7 @@
   left: 20px;
   top: 20px;
   opacity: 0;
-  animation: start 0.3s 2.7s forwards;
+  animation: start 0.3s 1.6s forwards;
 }
 @keyframes start {
   0% {

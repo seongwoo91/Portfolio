@@ -16,7 +16,11 @@
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
   gap: 1px;
-  transition: background 1.5s 0.5s;
+  transition: background 0.7s 0.5s;
+  pointer-events: none;
+}
+#react.btnon {
+  pointer-events: auto;
 }
 #react.load {
   background: #d6d6d6;
@@ -25,7 +29,7 @@
   background: #000;
 }
 #react.close {
-  animation: close 1.5s 2.2s forwards;
+  animation: close 0.7s 1.5s forwards;
 }
 @keyframes close {
   0% {
@@ -48,7 +52,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: open 1.5s 1.5s forwards;
+  animation: open 0.7s 1s forwards;
 }
 #react > div.active::after {
   content: "";
@@ -58,7 +62,7 @@
   width: 100%;
   height: 100%;
   background: #000;
-  animation: bye 1.5s forwards;
+  animation: bye 0.7s forwards;
 }
 @keyframes bye {
   0% {
@@ -148,7 +152,7 @@
   left: 20px;
   top: 20px;
   opacity: 0;
-  animation: start 0.3s 2.7s forwards;
+  animation: start 0.3s 1.6s forwards;
 }
 @keyframes start {
   0% {
@@ -159,28 +163,26 @@
   }
 }
 .pagenum a {
+  margin-right: 6px;
+  transition: all 0.5s ease;
+}
+.pagenum a:nth-child(2):hover .w2 {
+  display: none;
+}
+.pagenum a:nth-child(2):hover .b2 {
   display: inline-block;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-weight: 700;
-  text-align: center;
-  line-height: 36px;
-  border: 3px solid #000;
 }
-.pagenum a:hover {
-  background: #000;
-  color: #fff;
+.w1,
+.b2 {
+  display: none;
 }
+
 #react h1 {
   font-size: 7vw;
   text-transform: uppercase;
   font-weight: 700;
 }
-.now {
-  background: #000;
-  color: #fff;
-}
+
 .lh_1 {
   line-height: 1;
 }
@@ -219,6 +221,7 @@
   position: absolute;
   bottom: 30px;
   right: 30px;
+  transition: all 0.1s;
 }
 .movelink h2 {
   float: right;
@@ -227,10 +230,30 @@
 .movelink img {
   float: right;
 }
+.movelink:hover {
+  opacity: 0.5;
+}
 .code {
   opacity: 0;
   transition: opacity 0.5 ease;
 }
 .code.start {
   opacity: 1;
+}
+.point {
+  transition: all 0.1s;
+}
+.point:hover {
+  opacity: 0.5;
+}
+.descbox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.desc_image {
+  width: 40vw;
+  height: 22.5vw;
+  margin: 1vw 4vw;
+  border: 1px solid #cdcdcd;
 }

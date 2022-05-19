@@ -15,9 +15,24 @@
         <div class="p10 h1 lh_75">
           <!-- 1 -->
           <div class="pagenum">
-            <a href="#3" class="now">1</a>
-            <a href="../phpsite/index.html" class="link">2</a>
-            <a href="../teamproject/index.html" class="link">3</a>
+            <a href="#3"
+              ><img src="img/link1_w.svg" alt="1" class="w1" /><img
+                src="img/link1_b.svg"
+                alt="1"
+                class="b1"
+            /></a>
+            <a href="../phpsite/index.html" class="link"
+              ><img src="img/link2_w.svg" alt="2" class="w2" /><img
+                src="img/link2_b.svg"
+                alt="2"
+                class="b2"
+            /></a>
+            <a href="../teamproject/index.html" class="link"
+              ><img src="img/link3_w.svg" alt="3" class="w3" /><img
+                src="img/link3_b.svg"
+                alt="3"
+                class="b3"
+            /></a>
           </div>
           <h1>webstandard</h1>
         </div>
@@ -103,6 +118,9 @@
           }, 100);
         }
         pageon();
+        setTimeout(() => {
+          document.getElementById("webstan").classList.add("btnon");
+        }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {
             el.addEventListener("click", (e) => {
@@ -116,7 +134,7 @@
               });
               setTimeout(() => {
                 window.location.href = Href;
-              }, 3300);
+              }, 2000);
             });
           });
         }

@@ -22,9 +22,24 @@
         <div class="p10 h1 lh_75">
           <!-- 2 -->
           <div class="pagenum">
-            <a href="../musicplayer/index.html" class="link">1</a>
-            <a href="#3" class="now">2</a>
-            <a href="../gamesite/index.html" class="link">3</a>
+            <a href="../musicplayer/index.html" class="link"
+              ><img src="img/link1_w.svg" alt="1" class="w1" /><img
+                src="img/link1_b.svg"
+                alt="1"
+                class="b1"
+            /></a>
+            <a href="#3"
+              ><img src="img/link2_w.svg" alt="2" class="w2" /><img
+                src="img/link2_b.svg"
+                alt="2"
+                class="b2"
+            /></a>
+            <a href="../gamesite/index.html" class="link"
+              ><img src="img/link3_w.svg" alt="3" class="w3" /><img
+                src="img/link3_b.svg"
+                alt="3"
+                class="b3"
+            /></a>
           </div>
           <h1>effect</h1>
         </div>
@@ -108,6 +123,9 @@
           }, 100);
         }
         pageon();
+        setTimeout(() => {
+          document.getElementById("effect").classList.add("btnon");
+        }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {
             el.addEventListener("click", (e) => {
@@ -121,7 +139,7 @@
               });
               setTimeout(() => {
                 window.location.href = Href;
-              }, 3300);
+              }, 2000);
             });
           });
         }

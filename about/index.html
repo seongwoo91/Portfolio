@@ -96,6 +96,9 @@
           }, 100);
         }
         pageon();
+        setTimeout(() => {
+          document.getElementById("about").classList.add("btnon");
+        }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {
             el.addEventListener("click", (e) => {
@@ -109,7 +112,7 @@
               });
               setTimeout(() => {
                 window.location.href = Href;
-              }, 3300);
+              }, 2000);
             });
           });
         }

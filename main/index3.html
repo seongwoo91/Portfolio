@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/style3.css" />
-    <title>반응형</title>
+    <title>메인페이지</title>
   </head>
   <body>
     <div id="cont__wrap">
@@ -36,9 +36,25 @@
             공부하였으며, 알고리즘을 통하여 깊이를 더하다.
           </p>
           <div class="num_box">
-            <a href="../musicplayer/index.html" class="link">1</a>
-            <a href="../effect/index.html" class="link">2</a>
-            <a href="../gamesite/index.html" class="link">3</a>
+            <a href="../musicplayer/index.html" class="link"
+              ><img src="img/btn1_w.svg" alt="1번" class="w1" /><img
+                src="img/btn1_b.svg"
+                alt="1번"
+                class="b1"
+              />
+            </a>
+            <a href="../effect/index.html" class="link"
+              ><img src="img/btn2_w.svg" alt="2번" class="w2" /><img
+                src="img/btn2_b.svg"
+                alt="2번"
+                class="b2"
+            /></a>
+            <a href="../gamesite/index.html" class="link"
+              ><img src="img/btn3_w.svg" alt="3번" class="w3" /><img
+                src="img/btn3_b.svg"
+                alt="3번"
+                class="b3"
+            /></a>
           </div>
         </div>
         <div>
@@ -70,9 +86,24 @@
             마스터하다.
           </p>
           <div class="num_box">
-            <a href="../webstandard/index.html" class="link">1</a>
-            <a href="../phpsite/index.html" class="link">2</a>
-            <a href="../teamproject/index.html" class="link">3</a>
+            <a href="../webstandard/index.html" class="link"
+              ><img src="img/btn1_w.svg" alt="1번" class="w1" /><img
+                src="img/btn1_b.svg"
+                alt="1번"
+                class="b1"
+            /></a>
+            <a href="../phpsite/index.html" class="link"
+              ><img src="img/btn2_w.svg" alt="2번" class="w2" /><img
+                src="img/btn2_b.svg"
+                alt="2번"
+                class="b2"
+            /></a>
+            <a href="../teamproject/index.html" class="link"
+              ><img src="img/btn3_w.svg" alt="3번" class="w3" /><img
+                src="img/btn3_b.svg"
+                alt="3번"
+                class="b3"
+            /></a>
           </div>
         </div>
         <div class="h1 lh_1">
@@ -91,8 +122,18 @@
             자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
           </p>
           <div class="num_box">
-            <a href="../react/index.html" class="link">1</a>
-            <a href="../vue/index.html" class="link">2</a>
+            <a href="../react/index.html" class="link"
+              ><img src="img/btn1_w.svg" alt="1번" class="w1" /><img
+                src="img/btn1_b.svg"
+                alt="1번"
+                class="b1"
+            /></a>
+            <a href="../vue/index.html" class="link"
+              ><img src="img/btn2_w.svg" alt="2번" class="w2" /><img
+                src="img/btn2_b.svg"
+                alt="2번"
+                class="b2"
+            /></a>
           </div>
         </div>
         <div>
@@ -164,6 +205,9 @@
           }, 100);
         }
         pageon();
+        setTimeout(() => {
+          document.getElementById("section").classList.add("btnon");
+        }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {
             el.addEventListener("click", (e) => {
@@ -177,7 +221,7 @@
               });
               setTimeout(() => {
                 window.location.href = Href;
-              }, 3300);
+              }, 2000);
             });
           });
         }
