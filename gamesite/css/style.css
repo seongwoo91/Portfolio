@@ -1,127 +1,222 @@
 * {
-    font-family: "GmarketSans";
-  }
-  
-  #music__wrap {
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    display: grid;
-    grid-template-areas:
-      "a1 a2 a2 a2"
-      "b1 b2 b2 b2"
-      "b1 b2 b2 b2"
-      "d1 d2 d3 d4";
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-    overflow: hidden;
-  }
+  font-family: "GmarketSans";
+}
 
-  .a1,.a2,.b1,.b2,.d1,.d2,.d3,.d4 {
-    border: 0.5px solid rgb(233, 232, 232);
-    overflow: hidden;
+#game {
+  width: 100vw;
+  height: 100vh;
+  background: #d6d6d6;
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a2 a2"
+    "b1 b2 b2 b2"
+    "b1 b2 b2 b2"
+    "d1 d2 d3 d4";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+  gap: 1px;
+  transition: background 1.5s 0.5s;
+}
+#game.load {
+  background: #d6d6d6;
+}
+#game.load.pagemove {
+  background: #000;
+}
+#game.close {
+  animation: close 1.5s 2.2s forwards;
+}
+@keyframes close {
+  0% {
+    background: #d6d6d6;
   }
-  .a1 {
-      grid-area: a1;
-      position: relative;
-  }  
-  .a1 a {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 20px;
-  }
-  .a1 span {
-  font-weight: 300;
-  font-size: 40px;
-  margin-bottom: 5px;
-  padding-right: 200px;
-  }
-  .a1 img {
-  
-  }
-  .a2 {
-      grid-area: a2;
-      position: relative;
-      padding: 20px;
-  }
-  .a2 ol {
-    position: absolute;
-    display: flex;
-  }
-  .a2 ol li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    border-radius: 34px;
-    border: 1px solid black;
-    margin-right: 4px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 2.2; 
-  }
-  .a2 ol li.active {
-    color: #fff;
+  100% {
     background: #000;
   }
-  .a2 h1 {
-    position: absolute;
-    font-weight: 700;
-    font-size: 130px;
-    bottom: 0;  
-    text-transform: uppercase;
+}
+#game > div {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+#game > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: open 1.5s 1.5s forwards;
+}
+#game > div.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bye 1.5s forwards;
+}
+@keyframes bye {
+  0% {
+    width: 0%;
   }
-  .b1 {
-      grid-area: b1;
-      padding: 40px;
-      background: #000;
+  100% {
+    width: 100%;
   }
-  .b1 p {
-    font-family: "ChosunNm";
-    color: #fff;
-    font-size: 25px;
-    line-height: 1.5;
+}
+@keyframes open {
+  0% {
+    width: 100%;
   }
-  .b2 {
-      grid-area: b2;
-      background-image: url(../img/gamesite.jpg);
-      background-size: cover;
+  100% {
+    width: 0%;
   }
-  .d1 {
-      grid-area: d1;
+}
+#game > div:nth-child(1) {
+  grid-area: a1;
+}
+#game > div:nth-child(2) {
+  grid-area: a2;
+}
+#game > div:nth-child(3) {
+  grid-area: a3;
+}
+#game > div:nth-child(4) {
+  grid-area: a4;
+}
+#game > div:nth-child(5) {
+  grid-area: b1;
+}
+#game > div:nth-child(6) {
+  grid-area: b2;
+  background-image: url(../img/gamesite.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#game > div:nth-child(7) {
+  grid-area: b3;
+}
+#game > div:nth-child(8) {
+  grid-area: b4;
+}
+#game > div:nth-child(9) {
+  grid-area: c1;
+}
+#game > div:nth-child(10) {
+  grid-area: c2;
+}
+#game > div:nth-child(11) {
+  grid-area: c3;
+}
+#game > div:nth-child(12) {
+  grid-area: c4;
+}
+#game > div:nth-child(13) {
+  grid-area: d1;
+}
+#game > div:nth-child(14) {
+  grid-area: d2;
+}
+#game > div:nth-child(15) {
+  grid-area: d3;
+}
+#game > div:nth-child(16) {
+  grid-area: d4;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 20px;
+}
+.p30 {
+  padding: 30px;
+}
+.pagenum {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0;
+  animation: start 0.3s 2.7s forwards;
+}
+@keyframes start {
+  0% {
+    opacity: 0;
   }
-  .d2 {
-      grid-area: d2;
-      position: relative;
-      padding: 25px;
+  100% {
+    opacity: 1;
   }
-  .d2 h2,
-  .d3 h2,
-  .d4 h2
-   {
-    font-weight: 300;
-    font-size: 40px;
-    font-weight: 300;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  .d2 p,
-  .d3 p,
-  .d4 p
-   {
-    font-family: "ChosunNm";
-    font-size: 20px;
-  }
-  .d3 {
-      grid-area: d3;
-      position: relative;
-      padding: 25px;
-  }
-  .d4 {
-      grid-area: d4;
-      position: relative;
-      padding: 25px;
-  }
-  
+}
+.pagenum a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 700;
+  text-align: center;
+  line-height: 36px;
+  border: 3px solid #000;
+}
+.pagenum a:hover {
+  background: #000;
+  color: #fff;
+}
+#game h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.now {
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.lh_75 {
+  line-height: 0.75;
+}
+.lh_160 {
+  line-height: 1.6;
+}
+#game .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#game .black {
+  background: #000;
+  color: #fff;
+}
+.font_cho {
+  font-family: "ChosunNm";
+}
+.fz20 {
+  font-size: 20px;
+}
+#game h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+.p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.movelink {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.movelink h2 {
+  float: left;
+  margin-right: 100px;
+}
+.movelink img {
+  float: left;
+}

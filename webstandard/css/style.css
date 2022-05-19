@@ -1,138 +1,222 @@
 * {
-    font-family: "GmarketSans";
-  }
-  
-  #webstan_wrap {
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    display: grid;
-    grid-template-areas:
-      "a1 a1 a1 a4"
-      "b1 b1 b3 b4"
-      "b1 b1 c3 c4"
-      "b1 b1 d3 c4";
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
-    overflow: hidden;
-  }
-  .a1,
-  .a4,
-  .b1,
-  .b3,
-  .b4,
-  .c3,
-  .c4,
-  .d3 {
-    border: 0.5px solid rgb(233, 232, 232);
-    overflow: hidden;
-  }
+  font-family: "GmarketSans";
+}
 
-
-  .a1 {
-      grid-area: a1;
-      position: relative;
-      padding: 20px;
+#webstan {
+  width: 100vw;
+  height: 100vh;
+  background: #d6d6d6;
+  display: grid;
+  grid-template-areas:
+    "a1 a1 a1 a4"
+    "b1 b1 b3 b4"
+    "b1 b1 c3 c4"
+    "b1 b1 d3 c4";
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  overflow: hidden;
+  gap: 1px;
+  transition: background 1.5s 0.5s;
+}
+#webstan.load {
+  background: #d6d6d6;
+}
+#webstan.load.pagemove {
+  background: #000;
+}
+#webstan.close {
+  animation: close 1.5s 2.2s forwards;
+}
+@keyframes close {
+  0% {
+    background: #d6d6d6;
   }
-  .a1 ol {
-    position: absolute;
-    display: flex;
-  }
-  .a1 ol li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    border-radius: 34px;
-    border: 1px solid black;
-    margin-right: 4px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 2.2; 
-  }
-  .a1 ol li.active {
-    color: #fff;
+  100% {
     background: #000;
   }
-  .a1 h1 {
-    position: absolute;
-    font-weight: 700;
-    font-size: 130px;
-    bottom: 0;  
-    text-transform: uppercase;
-  }
-  .a4 {
-      grid-area: a4;
-      position: relative;
-  }
-  
-    .a4 a {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 20px;
-
-    }
-    
-    .a4 span {
-    font-weight: 300;
-    font-size: 40px;
-    float: right;
-    margin-bottom: 5px;
-    padding-left: 200px;
-    }
-    .a4 img {
-        float: right;
-    }
-  .b1 {
-      grid-area: b1;
-      background-image: url(../img/webstandard.jpg);
-      background-size: cover;     
-  }
-  .b3 {
-      grid-area: b3;
-      position: relative;
-      padding: 25px;
-  }
-  
-.b3 h2,
-.c3 h2,
-.d3 h2
- {
-  font-weight: 300;
-  font-size: 40px;
-  font-weight: 300;
-  margin-bottom: 10px;
 }
-.b3 p,
-.c3 p,
-.d3 p
- {
+#webstan > div {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+#webstan > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: open 1.5s 1.5s forwards;
+}
+#webstan > div.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bye 1.5s forwards;
+}
+@keyframes bye {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes open {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+#webstan > div:nth-child(1) {
+  grid-area: a1;
+}
+#webstan > div:nth-child(2) {
+  grid-area: a2;
+}
+#webstan > div:nth-child(3) {
+  grid-area: a3;
+}
+#webstan > div:nth-child(4) {
+  grid-area: a4;
+}
+#webstan > div:nth-child(5) {
+  grid-area: b1;
+  background-image: url(../img/webstandard.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#webstan > div:nth-child(6) {
+  grid-area: b2;
+}
+#webstan > div:nth-child(7) {
+  grid-area: b3;
+}
+#webstan > div:nth-child(8) {
+  grid-area: b4;
+}
+#webstan > div:nth-child(9) {
+  grid-area: c1;
+}
+#webstan > div:nth-child(10) {
+  grid-area: c2;
+}
+#webstan > div:nth-child(11) {
+  grid-area: c3;
+}
+#webstan > div:nth-child(12) {
+  grid-area: c4;
+}
+#webstan > div:nth-child(13) {
+  grid-area: d1;
+}
+#webstan > div:nth-child(14) {
+  grid-area: d2;
+}
+#webstan > div:nth-child(15) {
+  grid-area: d3;
+}
+#webstan > div:nth-child(16) {
+  grid-area: d4;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 20px;
+}
+.p30 {
+  padding: 30px;
+}
+.pagenum {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0;
+  animation: start 0.3s 2.7s forwards;
+}
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.pagenum a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: 700;
+  text-align: center;
+  line-height: 36px;
+  border: 3px solid #000;
+}
+.pagenum a:hover {
+  background: #000;
+  color: #fff;
+}
+#webstan h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.now {
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.lh_75 {
+  line-height: 0.75;
+}
+.lh_160 {
+  line-height: 1.6;
+}
+#webstan .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#webstan .black {
+  background: #000;
+  color: #fff;
+}
+.font_cho {
   font-family: "ChosunNm";
+}
+.fz20 {
   font-size: 20px;
 }
-  .b4 {
-      grid-area: b4;
-  }
-  .c3 {
-      grid-area: c3;
-      position: relative;
-      padding: 25px;
-  }
-  .c4 {
-      grid-area: c4;
-      background: #000;      
-      padding: 40px;
-  }
-  .c4 p {
-    font-family: "ChosunNm";
-    color: #fff;
-    font-size: 25px;
-    line-height: 1.5;
-  }
-  .d3 {
-      grid-area: d3;
-      position: relative;
-      padding: 25px;
-  } 
+#webstan h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+.p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.movelink {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.movelink h2 {
+  float: right;
+  margin-left: 100px;
+}
+.movelink img {
+  float: right;
+}

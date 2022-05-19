@@ -50,6 +50,7 @@
   background: #000;
   animation: open 1.5s 1.5s forwards;
 }
+
 #section > div.active::after {
   content: "";
   position: absolute;
@@ -60,6 +61,7 @@
   background: #000;
   animation: bye 1.5s forwards;
 }
+
 @keyframes bye {
   0% {
     width: 0%;
@@ -68,6 +70,7 @@
     width: 100%;
   }
 }
+
 @keyframes open {
   0% {
     width: 100%;
@@ -76,6 +79,7 @@
     width: 0%;
   }
 }
+
 #section > div:nth-child(1) {
   grid-area: a1;
 }

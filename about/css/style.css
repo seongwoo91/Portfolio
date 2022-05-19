@@ -2,10 +2,10 @@
   font-family: "GmarketSans";
 }
 
-#about__wrap {
+#about {
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: #d6d6d6;
   display: grid;
   grid-template-areas:
     "a1 a1 a1 a4"
@@ -15,111 +15,218 @@
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 25% 25% 25% 25%;
   overflow: hidden;
+  gap: 1px;
+  transition: background 1.5s 0.5s;
 }
-
-.a1,
-.a4,
-.b4,
-.c4,
-.d1,
-.d2,
-.d3 {
-  border: 0.5px solid rgb(233, 232, 232);
-  overflow: hidden;
+#about.load {
+  background: #d6d6d6;
 }
-
-.a1 {
-  grid-area: a1;
-  background-image: url(/about/img/face.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.a4 {
-  grid-area: a4;
-  position: relative;
-}
-.a4 a {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: 20px;
-}
-.a4 span {
-  float: right;
-  font-weight: 300;
-  font-size: 40px;
-  display: block;
-  margin-bottom: 5px;
-  padding-left: 200px;
-}
-.a4 img {
-  float: right;
-}
-.b4 {
-  grid-area: b4;
-  padding: 25px;
-  position: relative;
-}
-.b4 .movebar,
-.c4 .movebar,
-.d2 .movebar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0px;
-  height: 100%;
+#about.load.pagemove {
   background: #000;
 }
-.b4 h2,
-.c4 h2,
-.d2 h2 {
-  font-weight: 300;
-  font-size: 40px;
+#about.close {
+  animation: close 1.5s 2.2s forwards;
 }
-.b4 p,
-.c4 p,
-.d2 p {
-  font-family: "ChosunNm";
-  font-size: 18px;
+@keyframes close {
+  0% {
+    background: #d6d6d6;
+  }
+  100% {
+    background: #000;
+  }
 }
-.c4 {
-  grid-area: c4;
-  padding: 25px;
-  position: relative;
-}
-.d1 {
-  grid-area: d1;
-  position: relative;
-}
-.d1 ul {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-}
-.d1 ul li {
-  display: inline;
-  padding: 4px;
-}
-
-.d2 {
-  grid-area: d2;
-  padding: 25px;
-  position: relative;
-}
-.d3 {
-  grid-area: d3;
+#about > div {
+  background: #fff;
   overflow: hidden;
   position: relative;
 }
-.d3 span {
+#about > div::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: open 1.5s 1.5s forwards;
+}
+#about > div.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  animation: bye 1.5s forwards;
+}
+@keyframes bye {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes open {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+#about > div:nth-child(1) {
+  grid-area: a1;
+  background-image: url(../img/face.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#about > div:nth-child(2) {
+  grid-area: a2;
+}
+#about > div:nth-child(3) {
+  grid-area: a3;
+}
+#about > div:nth-child(4) {
+  grid-area: a4;
+}
+#about > div:nth-child(5) {
+  grid-area: b1;
+}
+#about > div:nth-child(6) {
+  grid-area: b2;
+}
+#about > div:nth-child(7) {
+  grid-area: b3;
+}
+#about > div:nth-child(8) {
+  grid-area: b4;
+}
+#about > div:nth-child(9) {
+  grid-area: c1;
+}
+#about > div:nth-child(10) {
+  grid-area: c2;
+}
+#about > div:nth-child(11) {
+  grid-area: c3;
+}
+#about > div:nth-child(12) {
+  grid-area: c4;
+}
+#about > div:nth-child(13) {
+  grid-area: d1;
+}
+#about > div:nth-child(14) {
+  grid-area: d2;
+}
+#about > div:nth-child(15) {
+  grid-area: d3;
+}
+#about > div:nth-child(16) {
+  grid-area: d4;
+}
+.p10 {
+  padding: 10px;
+}
+.p20 {
+  padding: 20px;
+}
+.p30 {
+  padding: 30px;
+}
+.pagenum {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0;
+  animation: start 0.3s 2.7s forwards;
+}
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.pagenum a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   font-weight: 700;
-  font-size: 120px;
+  text-align: center;
+  line-height: 36px;
+  border: 3px solid #000;
+}
+.pagenum a:hover {
+  background: #000;
+  color: #fff;
+}
+#about h1 {
+  font-size: 7vw;
   text-transform: uppercase;
+  font-weight: 700;
+}
+.now {
+  background: #000;
+  color: #fff;
+}
+.lh_1 {
+  line-height: 1;
+}
+.lh_75 {
+  line-height: 0.75;
+}
+.lh_160 {
+  line-height: 1.6;
+}
+#about .h1 {
+  display: flex;
+  align-items: flex-end;
+}
+#about .black {
+  background: #000;
+  color: #fff;
+}
+.font_cho {
+  font-family: "ChosunNm";
+}
+.fz20 {
+  font-size: 20px;
+}
+#about h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline;
+}
+.p {
+  font-family: "ChosunNm";
+  font-size: 18px;
+  line-height: 1.6;
+}
+.movelink {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.movelink h2 {
+  float: right;
+  margin-left: 100px;
+}
+.movelink img {
+  float: right;
+}
+.link_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+}
+.link_box a {
+  margin-right: 15px;
 }

@@ -10,65 +10,111 @@
     <title>어바웃페이지</title>
   </head>
   <body>
-    <div id="about__wrap">
-      <div class="a1"></div>
-      <div class="a4">
-        <div class="a4box">
-          <a href="../main/index.html">
-            <span>HOME</span>
+    <div id="about_wrap">
+      <section id="about" class="load pagemove">
+        <div>
+          <!-- 1 -->
+        </div>
+        <div>
+          <!-- 2 -->
+        </div>
+        <div>
+          <!-- 3 -->
+        </div>
+        <div>
+          <!-- 4 -->
+          <a href="../main/index3.html" class="movelink link">
+            <h2>home</h2>
             <img src="img/Arrow.svg" alt="화살표" />
           </a>
         </div>
-      </div>
-      <div class="b4">
-        <div class="b4box">
-          <div class="movebar"></div>
-          <a href="#3">
-            <h2>PASSION</h2>
-            <p>부족하지만 열정 하나만큼은 가득한 개발자입니다!</p>
-          </a>
+        <div>
+          <!-- 5 -->
         </div>
-      </div>
-      <div class="c4">
-        <div class="c4box">
-          <div class="movebar"></div>
-          <a href="#3">
-            <h2>TRY</h2>
-            <p>
-              자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-              자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            </p>
-          </a>
+        <div>
+          <!-- 6 -->
         </div>
-      </div>
-      <div class="d1">
-        <ul>
-          <li>
+        <div>
+          <!-- 7 -->
+        </div>
+        <div class="p10">
+          <!-- 8 -->
+          <h2>PASSION</h2>
+          <p class="p">열정왕</p>
+        </div>
+        <div>
+          <!-- 9 -->
+        </div>
+        <div>
+          <!-- 10 -->
+        </div>
+        <div>
+          <!-- 11 -->
+        </div>
+        <div class="p10">
+          <!-- 12 -->
+          <h2>TRY</h2>
+          <p class="p">
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+          </p>
+        </div>
+        <div>
+          <!-- 13 -->
+          <div class="link_box">
             <a href="#3"><img src="img/insta.svg" alt="인스타" /></a>
-          </li>
-          <li>
-            <a href="#3"><img src="img/gith.svg" alt="깃헙" /></a>
-          </li>
-          <li>
-            <a href="#3"><img src="img/chane.svg" alt="체인" /></a>
-          </li>
-        </ul>
-      </div>
-      <div class="d2">
-        <div class="d2box">
-          <div class="movebar"></div>
-          <a href="#3">
-            <h2>DREAM</h2>
-            <p>
-              자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-              자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            </p>
-          </a>
+            <a href="#3"><img src="img/gith.svg" alt="기텁" /></a>
+            <a href="#3"><img src="img/chane.svg" alt="링크" /></a>
+          </div>
         </div>
-      </div>
-      <div class="d3">
-        <span>about me</span>
-      </div>
+        <div class="p10">
+          <!-- 14 -->
+          <h2>DREAM</h2>
+          <p class="p">
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
+          </p>
+        </div>
+        <div class="h1">
+          <!-- 15 -->
+          <h1>about me</h1>
+        </div>
+        <div>
+          <!-- 16 -->
+        </div>
+      </section>
     </div>
+    <script>
+      const link = document.querySelector("#about .link");
+      const Box = document.querySelectorAll("#about div");
+
+      window.onload = function () {
+        function pageon() {
+          setTimeout(() => {
+            document.getElementById("about").classList.remove("pagemove");
+            //callback();
+          }, 100);
+        }
+        pageon();
+        function Pagechange() {
+          document.querySelectorAll(".link").forEach((el) => {
+            el.addEventListener("click", (e) => {
+              e.preventDefault();
+              const Href = el.getAttribute("href");
+              document.getElementById("about").classList.add("close");
+              Box.forEach((e, i) => {
+                setTimeout(() => {
+                  e.classList.add("active");
+                }, 50 * i);
+              });
+              setTimeout(() => {
+                window.location.href = Href;
+              }, 3300);
+            });
+          });
+        }
+        Pagechange();
+      };
+    </script>
   </body>
 </html>
