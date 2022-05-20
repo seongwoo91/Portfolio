@@ -53,6 +53,7 @@
   height: 100%;
   background: #000;
   animation: open 0.7s 1s forwards;
+  z-index: 9999;
 }
 #react > div.active::after {
   content: "";
@@ -201,6 +202,7 @@
 #react .black {
   background: #000;
   color: #fff;
+  position: relative;
 }
 .font_cho {
   font-family: "ChosunNm";
@@ -301,4 +303,35 @@
   font-weight: 300;
   font-size: 2.6vw;
   text-transform: uppercase;
+}
+
+.test3.test4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 500vh;
+  background: #000;
+  animation: bye 0.7s 0.45s forwards;
+  z-index: 9999;
+}
+
+@keyframes bye {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.test3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
 }
