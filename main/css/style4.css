@@ -1,0 +1,35 @@
+* {
+  color: #fff;
+  font-size: 60px;
+}
+
+#startpage {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#startpage > div {
+  overflow: hidden;
+}
+#startpage .hello {
+  transition: all 1.5s;
+  transform: translateY(200%);
+  display: inline-block;
+}
+#startpage .hello.hi {
+  transform: translateY(0%);
+}
+#startpage .hello.hi.bye {
+  animation: up 1s 0.5s forwards;
+}
+@keyframes up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
