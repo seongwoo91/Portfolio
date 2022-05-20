@@ -118,6 +118,13 @@
 }
 #webstan > div:nth-child(12) {
   grid-area: c4;
+  transition: all 0.3s ease;
+}
+#webstan > div:nth-child(12).scroll {
+  overflow-y: auto;
+}
+#webstan > div:nth-child(12).scroll::-webkit-scrollbar {
+  width: 1px;
 }
 #webstan > div:nth-child(13) {
   grid-area: d1;
@@ -202,6 +209,9 @@
 .fz20 {
   font-size: 20px;
 }
+.fz18 {
+  font-size: 18px;
+}
 #webstan h2 {
   font-size: 40px;
   text-transform: uppercase;
@@ -224,4 +234,47 @@
 }
 .movelink img {
   float: right;
+}
+.descbox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.desc_image {
+  width: 21vw;
+  height: 25vw;
+  margin: 1vw 1vw;
+  border: 1px solid #cdcdcd;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.prl {
+  padding: 0 1vw;
+}
+#webstan h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.2vw;
+}
+.point {
+  transition: all 0.1s;
+}
+.point:hover {
+  opacity: 0.5;
 }

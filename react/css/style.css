@@ -257,3 +257,47 @@
   margin: 1vw 4vw;
   border: 1px solid #cdcdcd;
 }
+.desc_image2 {
+  width: 40vw;
+  height: 104.6vw;
+  margin: 1vw 4vw;
+  border: 1px solid #cdcdcd;
+}
+.desc_image3 {
+  width: 40vw;
+  height: 104.6vw;
+  margin: 1vw 4vw;
+  border: 1px solid #cdcdcd;
+}
+.desc_image4 {
+  width: 40vw;
+  height: 104.6vw;
+  margin: 1vw 4vw;
+  border: 1px solid #cdcdcd;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.prl {
+  padding: 0 1vw;
+}
+#react h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.6vw;
+}

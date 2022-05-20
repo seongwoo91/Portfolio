@@ -44,7 +44,7 @@
         </div>
         <div class="p10">
           <!-- 4 -->
-          <a href="../main/index3.html" class="movelink link">
+          <a href="../main/index3.html" class="movelink link point">
             <h2>home</h2>
             <img src="img/Arrow.svg" alt="화살표" />
           </a>
@@ -57,9 +57,12 @@
         </div>
         <div class="p10">
           <!-- 7 -->
+          <a href="#" class="point">
           <h2>webstandard</h2>
           <p class="p">웹 표준을 준수하여 제작한 사이트입니다.</p>
+        </a>
         </div>
+      
         <div>
           <!-- 8 -->
         </div>
@@ -71,23 +74,19 @@
         </div>
         <div class="p10">
           <!-- 11 -->
+          <a href="#" class="point">
           <h2>CODE VIEW</h2>
           <p class="p">
             무슨 무슨 기술을 사용하여 만든 소스를 깃을 통해 볼 수 있습니다.
           </p>
+        </a>
         </div>
-        <div class="black p20">
+        <div class="black p20 descbox">
           <!-- 12 -->
-          <p class="font_cho lh_160 fz20">
-            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            자바스크립트 프레임 웍 리액트 뷰, 껌이지 그냥 잘함 구경해보삼
-            자바스크립트 React는 상호작용이 많은 UI를 만들 때 생기는 어려움을
-            줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요.
-            그럼 React는 데이터가 변경됨에 따라 적절한 컴포넌트만 효율적으로
-            갱신하고 렌더링합니다.
+          <h3 class="mt10 mb30">Description of Webstandard site</h3>
+          <div class="desc_image"><img src="img/webstan.jpg" alt="1" /></div>
+          <p class="font_cho lh_160 fz18">
+            설명 텍스트가 들어가는 부분입니다 설명입니다 설명입니다 설명입니다.
           </p>
         </div>
         <div>
@@ -98,9 +97,11 @@
         </div>
         <div class="p10">
           <!-- 15 -->
+          <a href="#" class="point">
           <h2>SITE VIEW</h2>
           <p class="p">네티파이에 올린 파일을 직접 볼 수 있습니다.</p>
         </div>
+          </a>
         <div>
           <!-- 16 -->
         </div>
@@ -120,6 +121,7 @@
         pageon();
         setTimeout(() => {
           document.getElementById("webstan").classList.add("btnon");
+          document.querySelector(".black").classList.add("scroll");
         }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {

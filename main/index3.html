@@ -156,7 +156,7 @@
         </div>
         <div class="h1 lh_1">
           <!-- 13 -->
-          <h1>kor</h1>
+          <h1 class="kor">kor</h1>
         </div>
         <div class="h1 h1_tr">
           <!-- 14 -->
@@ -207,6 +207,7 @@
         pageon();
         setTimeout(() => {
           document.getElementById("section").classList.add("btnon");
+          document.querySelector(".kor").classList.add("load");
         }, 1600);
         function Pagechange() {
           document.querySelectorAll(".link").forEach((el) => {

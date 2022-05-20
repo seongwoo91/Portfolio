@@ -251,7 +251,18 @@
 .num_box a:nth-child(3):hover .w3 {
   display: none;
 }
-
+.kor {
+  position: relative;
+}
+.kor.load::after {
+  content: "";
+  background: url(../img/koreaflag.svg);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-size: cover;
+  top: -20px;
+}
 #section h3 {
   writing-mode: vertical-rl;
   font-size: 4vw;
