@@ -63,6 +63,7 @@
   height: 100%;
   background: #000;
   animation: bye 0.7s forwards;
+  z-index: 9999;
 }
 @keyframes bye {
   0% {
@@ -235,10 +236,18 @@
 .movelink img {
   float: right;
 }
+
 .descbox img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.opa {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.opa.test {
+  opacity: 1;
 }
 .desc_image {
   width: 21vw;

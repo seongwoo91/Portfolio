@@ -88,7 +88,7 @@
 }
 #section > div:nth-child(3) {
   grid-area: a3;
-  transition: all 0.6s ease;
+  transition: all 0.5s;
 }
 #section > div:nth-child(4) {
   grid-area: a4;
@@ -131,6 +131,31 @@
 }
 #section > div:nth-child(16) {
   grid-area: d4;
+}
+#section > div:nth-child(3)::after,
+#section > div:nth-child(6)::after,
+#section > div:nth-child(9)::after,
+#section > div:nth-child(15)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #000;
+  transition: all 0.5s;
+}
+#section > div:nth-child(3):hover::after,
+#section > div:nth-child(6):hover::after,
+#section > div:nth-child(9):hover::after,
+#section > div:nth-child(15):hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: #000;
 }
 .p10 {
   padding: 10px;
@@ -184,8 +209,8 @@
 }
 .more {
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 20px;
+  left: 30px;
   font-weight: 300;
   font-size: 22px;
   opacity: 0;
@@ -197,8 +222,8 @@
 }
 .num_box {
   position: absolute;
-  bottom: 10px;
-  left: 20px;
+  bottom: 20px;
+  left: 30px;
 }
 /* .num_box a {
   display: inline-block;
@@ -239,7 +264,7 @@
 #section > div:nth-child(6):hover,
 #section > div:nth-child(9):hover,
 #section > div:nth-child(15):hover {
-  padding-left: 20px;
+  padding-left: 30px;
 }
 .num_box a:nth-child(1):hover .b1,
 .num_box a:nth-child(2):hover .b2,

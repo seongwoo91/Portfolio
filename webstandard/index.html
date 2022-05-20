@@ -82,11 +82,13 @@
         </div>
         <div class="black p20 descbox">
           <!-- 12 -->
-          <h3 class="mt10 mb30">Description of Webstandard site</h3>
-          <div class="desc_image"><img src="img/webstan.jpg" alt="1" /></div>
-          <p class="font_cho lh_160 fz18">
-            설명 텍스트가 들어가는 부분입니다 설명입니다 설명입니다 설명입니다.
-          </p>
+          <div class="opa">
+            <h3 class="mt10 mb30">Description of Webstandard site</h3>
+            <div class="desc_image"><img src="img/webstan.jpg" alt="1" /></div>
+            <p class="font_cho lh_160 fz18">
+              설명 텍스트가 들어가는 부분입니다 설명입니다 설명입니다 설명입니다.
+            </p>
+          </div>          
         </div>
         <div>
           <!-- 13 -->
@@ -128,6 +130,7 @@
               e.preventDefault();
               const Href = el.getAttribute("href");
               document.getElementById("webstan").classList.add("close");
+              document.querySelector(".opa").classList.add("test");
               Box.forEach((e, i) => {
                 setTimeout(() => {
                   e.classList.add("active");
